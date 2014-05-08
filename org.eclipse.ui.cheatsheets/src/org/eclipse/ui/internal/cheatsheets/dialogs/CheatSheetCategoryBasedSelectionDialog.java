@@ -350,6 +350,11 @@ public class CheatSheetCategoryBasedSelectionDialog extends TrayDialog //extends
 		selectUrlRadio.addSelectionListener(new RadioSelectionListener());
 		selectUrlCombo.addModifyListener(new FileAndUrlListener());
 		checkRadioButtons();
+		
+		// Set tab traversal order explicitly so that each of the radio buttons may be selected.
+		outerContainer.setTabList(new Control[] { selectRegisteredRadio, sform,
+				selectFileRadio, selectFileComposite, selectUrlRadio, selectUrlCombo });
+		
 		return outerContainer;
 	}
 	
